@@ -17,7 +17,7 @@ A comprehensive repository of Data Structures and Algorithms implemented in **Ja
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/AyanMajumdar100/data-structures---algorithms.git
+git clone https://github.com/AyanMajumdar100/data-structures-and-algorithms.git
 cd data-structures---algorithms
 ````
 
