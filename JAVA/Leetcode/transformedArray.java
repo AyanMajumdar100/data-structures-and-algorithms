@@ -7,8 +7,10 @@
 // Return the new array result.
 
 // Note: Since nums is circular, moving past the last element wraps around to the beginning, and moving before the first element wraps back to the end.
+import java.util.Scanner;
+import java.util.Arrays;
 
-class transformedArray {
+class TransformedArray {
     public int[] constructTransformedArray(int[] nums) {
         int n = nums.length;              // Length of the input array
         int[] result = new int[n];        // Array to store the final transformed values
@@ -36,5 +38,30 @@ class transformedArray {
 
         // Return the transformed array
         return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Take input for array size
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        int[] nums = new int[n];
+
+        // Take input for array elements
+        System.out.println("Enter the array elements:");
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        // Create an instance of the class and call the method
+        TransformedArray transformer = new TransformedArray();
+        int[] result = transformer.constructTransformedArray(nums);
+
+        // Print the transformed array
+        System.out.println("Transformed array: " + Arrays.toString(result));
+
+        sc.close();
     }
 }
