@@ -11,6 +11,7 @@ public class QuickSort {
         int[] arr = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();
         arr = quickSort(arr);
         System.out.println(Arrays.toString(arr));
+        sc.close();
     }
 
     public static int[] quickSort(int[] arr) {

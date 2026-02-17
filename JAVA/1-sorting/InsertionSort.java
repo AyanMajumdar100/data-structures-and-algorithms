@@ -9,6 +9,7 @@ public class InsertionSort {
         int[] arr = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();
         insertionSort(arr);
         System.out.println(Arrays.toString(arr));
+        sc.close();
     }
 
     public static void insertionSort(int[] arr) {

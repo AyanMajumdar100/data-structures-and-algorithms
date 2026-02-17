@@ -9,6 +9,7 @@ public class SelectionSort {
         int[] arr = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();
         selectionSort(arr);
         System.out.println(Arrays.toString(arr));
+        sc.close();
     }
 
     public static void selectionSort(int[] arr) {
