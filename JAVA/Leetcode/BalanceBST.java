@@ -55,18 +55,20 @@ class BalanceBST {
 
     // Performs inorder traversal → gives sorted order in BST
     private void inorder(TreeNode node, List<Integer> values) {
-        if (node == null) return;
+        if (node == null)
+            return;
 
-        inorder(node.left, values);     // Visit left subtree
-        values.add(node.val);           // Store current node value
-        inorder(node.right, values);    // Visit right subtree
+        inorder(node.left, values); // Visit left subtree
+        values.add(node.val); // Store current node value
+        inorder(node.right, values); // Visit right subtree
     }
 
     // Builds balanced BST using sorted array (divide and conquer)
     private TreeNode buildBalancedTree(List<Integer> values, int start, int end) {
 
         // Base case: no elements left
-        if (start > end) return null;
+        if (start > end)
+            return null;
 
         // Choose middle element → keeps tree balanced
         int mid = start + (end - start) / 2;
@@ -83,6 +85,9 @@ class BalanceBST {
 
     // ---------- USER INPUT + DRIVER CODE ----------
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -93,7 +98,7 @@ class BalanceBST {
 
         TreeNode root = buildTree(input);
 
-        Solution sol = new Solution();
+        final BalanceBST sol = new BalanceBST();
         TreeNode balancedRoot = sol.balanceBST(root);
 
         System.out.println("Inorder of Balanced BST:");
@@ -104,10 +109,12 @@ class BalanceBST {
 
     // Builds binary tree from level-order input
     private static TreeNode buildTree(String data) {
-        if (data == null || data.trim().isEmpty()) return null;
+        if (data == null || data.trim().isEmpty())
+            return null;
 
         String[] values = data.split(" ");
-        if (values[0].equals("null")) return null;
+        if (values[0].equals("null"))
+            return null;
 
         TreeNode root = new TreeNode(Integer.parseInt(values[0]));
         Queue<TreeNode> queue = new LinkedList<>();
@@ -125,7 +132,8 @@ class BalanceBST {
             }
             i++;
 
-            if (i >= values.length) break;
+            if (i >= values.length)
+                break;
 
             // Right child
             if (!values[i].equals("null")) {
@@ -140,7 +148,8 @@ class BalanceBST {
 
     // Prints inorder traversal of tree
     private static void printInorder(TreeNode root) {
-        if (root == null) return;
+        if (root == null)
+            return;
         printInorder(root.left);
         System.out.print(root.val + " ");
         printInorder(root.right);

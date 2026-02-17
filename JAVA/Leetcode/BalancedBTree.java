@@ -54,13 +54,15 @@ class BalancedBTree {
         int leftHeight = checkHeight(node.left);
 
         // If left subtree is already unbalanced → stop early
-        if (leftHeight == -1) return -1;
+        if (leftHeight == -1)
+            return -1;
 
         // Recursively get height of right subtree
         int rightHeight = checkHeight(node.right);
 
         // If right subtree is already unbalanced → stop early
-        if (rightHeight == -1) return -1;
+        if (rightHeight == -1)
+            return -1;
 
         // If difference in heights is more than 1 → unbalanced
         if (Math.abs(leftHeight - rightHeight) > 1) {
@@ -83,7 +85,7 @@ class BalancedBTree {
 
         TreeNode root = buildTree(input);
 
-        Solution sol = new Solution();
+        final BalancedBTree sol = new BalancedBTree();
         boolean result = sol.isBalanced(root);
 
         System.out.println("Is the tree balanced? " + result);
@@ -93,10 +95,12 @@ class BalancedBTree {
 
     // Helper method to build tree from level-order input
     private static TreeNode buildTree(String data) {
-        if (data == null || data.trim().isEmpty()) return null;
+        if (data == null || data.trim().isEmpty())
+            return null;
 
         String[] values = data.split(" ");
-        if (values[0].equals("null")) return null;
+        if (values[0].equals("null"))
+            return null;
 
         TreeNode root = new TreeNode(Integer.parseInt(values[0]));
         Queue<TreeNode> queue = new LinkedList<>();
@@ -114,7 +118,8 @@ class BalancedBTree {
             }
             i++;
 
-            if (i >= values.length) break;
+            if (i >= values.length)
+                break;
 
             // Right child
             if (!values[i].equals("null")) {

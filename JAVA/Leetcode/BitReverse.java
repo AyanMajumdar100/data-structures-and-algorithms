@@ -46,13 +46,16 @@ class BitReverse {
 
     // ---------------- USER INPUT DRIVER ----------------
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter an integer:");
         int n = sc.nextInt();
 
-        BitReverser solver = new BitReverser();
+        final BitReverse solver = new BitReverse();
         int result = solver.reverseBits(n);
 
         System.out.println("Reversed bits result: " + result);
