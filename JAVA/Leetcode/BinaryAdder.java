@@ -16,17 +16,15 @@ a and b contain only '0' or '1'
 No leading zeros except the number zero itself
 */
 
-#include <iostream>
-#include <algorithm>
-using namespace std;
+import java.util.*;
 
 class BinaryAdder {
-public:
-    string addBinary(string a, string b) {
+
+    public String addBinary(String a, String b) {
 
         // I will build the answer from right to left
         // just like normal addition.
-        string result = "";
+        StringBuilder result = new StringBuilder();
 
         // Pointers start from the last index of both strings
         int i = a.length() - 1;
@@ -36,50 +34,47 @@ public:
         int carry = 0;
 
         // I continue while digits remain OR carry exists
-        while (i >= 0 || j >= 0 || carry) {
+        while (i >= 0 || j >= 0 || carry != 0) {
 
             // If digit exists in a, I add it to carry
             if (i >= 0) {
-                carry += a[i] - '0';  // convert char to int
+                carry += a.charAt(i) - '0'; // convert char to int
                 i--;
             }
 
             // If digit exists in b, I add it to carry
             if (j >= 0) {
-                carry += b[j] - '0';
+                carry += b.charAt(j) - '0';
                 j--;
             }
 
             // Current binary digit is carry % 2
             // I convert it back to char and append
-            result += (carry % 2 + '0');
+            result.append(carry % 2);
 
             // Update carry (either 0 or 1)
             carry /= 2;
         }
 
         // I reverse because digits were added backwards
-        reverse(result.begin(), result.end());
-
-        return result;
+        return result.reverse().toString();
     }
-};
 
+    // ---------------- USER INPUT DRIVER ----------------
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-// ---------------- USER INPUT DRIVER ----------------
-int main() {
-    string a, b;
+        System.out.print("Enter first binary string: ");
+        String a = sc.next();
 
-    cout << "Enter first binary string: ";
-    cin >> a;
+        System.out.print("Enter second binary string: ");
+        String b = sc.next();
 
-    cout << "Enter second binary string: ";
-    cin >> b;
+        BinaryAdder solver = new BinaryAdder();
+        String sum = solver.addBinary(a, b);
 
-    BinaryAdder solver;
-    string sum = solver.addBinary(a, b);
+        System.out.println("Binary Sum: " + sum);
 
-    cout << "Binary Sum: " << sum << endl;
-
-    return 0;
+        sc.close();
+    }
 }

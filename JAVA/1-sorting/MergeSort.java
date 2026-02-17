@@ -9,6 +9,7 @@ public class MergeSort {
         int[] arr = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();
         arr = mergeSort(arr);
         System.out.println(Arrays.toString(arr));
+        sc.close();
     }
 
     public static int[] mergeSort(int[] arr) {

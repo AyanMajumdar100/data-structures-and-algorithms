@@ -198,5 +198,6 @@ public class LongestBalancedSubarray2 {
 
         Solution sol = new Solution();
         System.out.println(sol.longestBalanced(nums));
+        sc.close();
     }
 }

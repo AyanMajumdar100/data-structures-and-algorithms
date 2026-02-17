@@ -9,6 +9,7 @@ public class BubbleSort {
         int[] arr = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();
         bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
+        sc.close();
     }
 
     public static void bubbleSort(int[] arr) {
