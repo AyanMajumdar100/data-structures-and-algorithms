@@ -1,41 +1,55 @@
-# Data Structures & Algorithms
+# 📚 Data Structures & Algorithms
 
-A comprehensive repository of Data Structures and Algorithms implemented in **Java** and **Python** for my learning and practice.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-## Tech Stack
+A comprehensive, constantly evolving repository of Data Structures and Algorithms implemented in **Java** and **Python**. Built for mastering algorithmic thinking, technical interview preparation, and everyday programming practice.
 
-- **Languages:** Java, Python
+## 🚀 Features
 
-## Features
+- **Extensive Coverage:** Implementations covering a wide range of topics from basic data structures to advanced algorithmic paradigms.
+- **Dual Language:** Concepts implemented in both Java and Python to compare logic, syntax, and performance.
+- **Clean & Documented:** Highly readable, maintainable code designed specifically for learning purposes.
+- **Interactive:** Includes console-based programs to test and visualize how the algorithms and data structures behave.
 
-- Well-organized implementations covering a wide range of DSA topics.
-- Interactive console programs for algorithms and data structures.
-- Clean, readable, and maintainable code for learning purposes.
+## 📁 Topics Covered
 
-## Setup & Run Instructions
+*(Note: These are examples, update them as you add more to the repo!)*
+- **Data Structures:** Arrays, Linked Lists, Stacks, Queues, Hash Maps, Trees (BST, AVL), Heaps, Graphs, and Tries.
+- **Algorithms:** - **Sorting & Searching:** Bubble, Merge, Quick Sort, Binary Search.
+  - **Graph Theory:** BFS, DFS, Dijkstra's Algorithm, Kruskal's.
+  - **Dynamic Programming:** Knapsack, Longest Common Subsequence.
+  - **Paradigms:** Greedy, Divide & Conquer, Backtracking, Two Pointers.
 
-1. **Clone the repository**
+## 💻 Tech Stack
+
+- **Java:** (Recommend JDK 11 or higher)
+- **Python:** (Recommend Python 3.8 or higher)
+
+## 🛠️ Setup & Run Instructions
+
+**1. Clone the repository**
 
 ```bash
-git clone https://github.com/AyanMajumdar100/data-structures-and-algorithms.git
-cd data-structures---algorithms
-````
+git clone [https://github.com/AyanMajumdar100/data-structures-and-algorithms.git](https://github.com/AyanMajumdar100/data-structures-and-algorithms.git)
+cd data-structures-and-algorithms
+```
 
-2. **For Java programs:**
+**2. For Java programs:**
 
+Compile the Java file first, then run the generated class:
 ```bash
 javac FileName.java
 java FileName
 ```
 
-3. **For Python programs:**
+**3. For Python programs:**
 
+Run the Python script directly:
 ```bash
 python FileName.py
 ```
-
-> Replace `FileName` with the name of the program you want to run.
+*(Depending on your system, you may need to use `python3` instead of `python`)*
 
 ---
-
-Built for practice, learning, and mastering Data Structures & Algorithms.
+*Built with ❤️ for practice, learning, and mastering Data Structures & Algorithms.*
