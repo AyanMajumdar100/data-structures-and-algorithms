@@ -16,7 +16,7 @@ A comprehensive, constantly evolving repository of Data Structures and Algorithm
 
 *(Note: These are examples, update them as you add more to the repo!)*
 - **Data Structures:** Arrays, Linked Lists, Stacks, Queues, Hash Maps, Trees (BST, AVL), Heaps, Graphs, and Tries.
-- **Algorithms:** - **Sorting & Searching:** Bubble, Merge, Quick Sort, Binary Search.
+- **Algorithms:** - **Sorting & Searching:** From basics like Bubble, Merge, Quick Sort, Binary Search.
   - **Graph Theory:** BFS, DFS, Dijkstra's Algorithm, Kruskal's.
   - **Dynamic Programming:** Knapsack, Longest Common Subsequence.
   - **Paradigms:** Greedy, Divide & Conquer, Backtracking, Two Pointers.
