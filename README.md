@@ -53,3 +53,5 @@ python FileName.py
 
 ---
 *Built with ❤️ for practice, learning, and mastering Data Structures & Algorithms.*
+
+(small correction for future use)
