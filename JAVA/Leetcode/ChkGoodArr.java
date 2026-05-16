@@ -16,13 +16,13 @@
  */
 import java.util.Scanner;
 
-public class ChkGoodArr2784 {
+public class ChkGoodArr {
     public boolean isGood(int[] nums) {
         int len = nums.length;
         int n = len - 1;
         // Frequency array to track occurrences of each number up to n
         int[] count = new int[len];
-        
+
         // Iterate through the array to populate the frequency array
         for (int num : nums) {
             // If any number is strictly greater than n, it violates the base[n] structure
@@ -31,14 +31,14 @@ public class ChkGoodArr2784 {
             }
             count[num]++;
         }
-        
+
         // Verify that numbers from 1 to n - 1 appear exactly one time
         for (int i = 1; i < n; i++) {
             if (count[i] != 1) {
                 return false;
             }
         }
-        
+
         // Verify that the maximum element n appears exactly two times
         return count[n] == 2;
     }
@@ -52,7 +52,7 @@ public class ChkGoodArr2784 {
         for (int i = 0; i < input.length; i++) {
             nums[i] = Integer.parseInt(input[i]);
         }
-        
+
         ChkGoodArr2784 solution = new ChkGoodArr2784();
         boolean result = solution.isGood(nums);
         System.out.println("Is the array good? " + result);
