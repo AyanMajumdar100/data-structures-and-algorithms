@@ -1,0 +1,72 @@
+/*
+ * Problem Statement:
+ * Given two integer arrays nums1 and nums2, sorted in non-decreasing order, 
+ * return the minimum integer common to both arrays. If there is no common integer 
+ * amongst nums1 and nums2, return -1.
+ * 
+ * Note that an integer is said to be common to nums1 and nums2 if both arrays 
+ * have at least one occurrence of that integer.
+ */
+
+/*
+ * Approach: Two Pointers
+ * Since both arrays are already sorted in non-decreasing order, we can use two 
+ * pointers starting at the beginning of each array. We compare the elements at 
+ * both pointers. If they are equal, we found the minimum common value. If the 
+ * element in nums1 is smaller, we increment the pointer for nums1. Otherwise, 
+ * we increment the pointer for nums2. We repeat this until we find a match or 
+ * exhaust either array.
+ */
+import java.util.Scanner;
+
+public class MinCommonVal2540 {
+    public int getCommon(int[] nums1, int[] nums2) {
+        // Initialize pointers for nums1 and nums2
+        int i = 0;
+        int j = 0;
+        int n = nums1.length;
+        int m = nums2.length;
+        
+        // Traverse both arrays until one is completely exhausted
+        while (i < n && j < m) {
+            if (nums1[i] == nums2[j]) {
+                // We found a match. Since arrays are sorted, the first match is the minimum.
+                return nums1[i];
+            } else if (nums1[i] < nums2[j]) {
+                // The element in nums1 is smaller, so advance the nums1 pointer to find a larger value
+                i++;
+            } else {
+                // The element in nums2 is smaller, so advance the nums2 pointer to find a larger value
+                j++;
+            }
+        }
+        
+        // If the loop finishes without finding a match, no common element exists
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Handle user input for the first array
+        System.out.println("Enter first array elements separated by space:");
+        String[] input1 = scanner.nextLine().trim().split("\\s+");
+        int[] nums1 = new int[input1.length];
+        for (int k = 0; k < input1.length; k++) {
+            nums1[k] = Integer.parseInt(input1[k]);
+        }
+        
+        // Handle user input for the second array
+        System.out.println("Enter second array elements separated by space:");
+        String[] input2 = scanner.nextLine().trim().split("\\s+");
+        int[] nums2 = new int[input2.length];
+        for (int k = 0; k < input2.length; k++) {
+            nums2[k] = Integer.parseInt(input2[k]);
+        }
+        
+        MinCommonVal2540 solver = new MinCommonVal2540();
+        System.out.println("Minimum common value: " + solver.getCommon(nums1, nums2));
+        
+        scanner.close();
+    }
+}
