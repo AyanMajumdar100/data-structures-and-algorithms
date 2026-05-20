@@ -1,0 +1,82 @@
+/*
+ * Problem Statement:
+ * You are given two 0-indexed integer permutations A and B of length n.
+ * A prefix common array of A and B is an array C such that C[i] is equal to the 
+ * count of numbers that are present at or before the index i in both A and B.
+ * Return the prefix common array of A and B.
+ * A sequence of n integers is called a permutation if it contains all integers 
+ * from 1 to n exactly once.
+ */
+
+/*
+ * Approach: Frequency Array
+ * Since A and B are permutations of numbers from 1 to n, any number can appear 
+ * at most twice across both arrays up to any index i.
+ * We can use a frequency array `count` of size n + 1 to keep track of seen elements.
+ * As we iterate through A and B simultaneously:
+ * 1. We increment the count for the element in A. If its count reaches 2, we found a common element.
+ * 2. We increment the count for the element in B. If its count reaches 2, we found another common element.
+ * 3. We record the current total of common elements in our result array C at index i.
+ */
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class PrefixCommonArr2657 {
+    public int[] findThePrefixCommonArray(int[] A, int[] B) {
+        int n = A.length;
+        // Result array to store the prefix common counts
+        int[] C = new int[n];
+        
+        // Frequency array to track occurrences of numbers from 1 to n
+        int[] count = new int[n + 1];
+        int commonCount = 0;
+        
+        // Traverse both arrays simultaneously
+        for (int i = 0; i < n; i++) {
+            // Process element from array A
+            if (++count[A[i]] == 2) {
+                // If count becomes 2, it has appeared in both A and B
+                commonCount++;
+            }
+            
+            // Process element from array B
+            if (++count[B[i]] == 2) {
+                // If count becomes 2, it has appeared in both A and B
+                commonCount++;
+            }
+            
+            // Store the running total of common elements at the current prefix
+            C[i] = commonCount;
+        }
+        
+        return C;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read input for array A
+        System.out.println("Enter elements of array A separated by space:");
+        String[] inputA = scanner.nextLine().trim().split("\\s+");
+        int[] A = new int[inputA.length];
+        for (int i = 0; i < inputA.length; i++) {
+            A[i] = Integer.parseInt(inputA[i]);
+        }
+        
+        // Read input for array B
+        System.out.println("Enter elements of array B separated by space:");
+        String[] inputB = scanner.nextLine().trim().split("\\s+");
+        int[] B = new int[inputB.length];
+        for (int i = 0; i < inputB.length; i++) {
+            B[i] = Integer.parseInt(inputB[i]);
+        }
+        
+        PrefixCommonArr2657 solver = new PrefixCommonArr2657();
+        int[] result = solver.findThePrefixCommonArray(A, B);
+        
+        // Output the result
+        System.out.println("Prefix Common Array: " + Arrays.toString(result));
+        
+        scanner.close();
+    }
+}
